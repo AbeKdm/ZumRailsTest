@@ -8,7 +8,9 @@ using ZumRailsPosts.API.Errors;
 
 namespace ZumRailsPosts.API.Middleware
 {
-    // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
+    /// <summary>
+    /// Middleware for handling exceptions in the ASP.NET Core pipeline.
+    /// </summary>
     public class ExceptionMiddleware
     {
         private readonly RequestDelegate _next;

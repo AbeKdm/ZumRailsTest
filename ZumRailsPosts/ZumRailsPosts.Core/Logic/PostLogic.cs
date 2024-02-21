@@ -9,6 +9,9 @@ using ZumRailsPosts.Core.Infrastructure;
 
 namespace ZumRailsPosts.Core.Logic
 {
+    /// <summary>
+    /// Provides business logic related to posts.
+    /// </summary>
     public class PostLogic : IPostsLogic
     {
         private readonly IPostsRepository _repo;
@@ -17,19 +20,17 @@ namespace ZumRailsPosts.Core.Logic
         {
             _repo = repo;
         }
+
+
+        /// <summary>
+        /// Retrieves posts asynchronously based on specified tags, with optional sorting and direction.
+        /// </summary>
+        /// <param name="tags">Tags to filter posts by.</param>
+        /// <param name="sortBy">Field to sort the posts by (default is 'id').</param>
+        /// <param name="direction">Sorting direction, either 'desc' (default) or 'asc'.</param>
+        /// <returns>Returns a list of posts based on the specified criteria.</returns>
         public async Task<List<Post>> GetPostsAsync(string[] tags, string sortBy = "id", string direction = "desc")
         {
-            /*
-             * TODO :
-             * for each tag
-             *  Create multiple calls to get posts by single tag
-             * 
-             * Union (\set) - remove dups
-             * 
-             * sort 
-             * direction
-             */
-
             List<Post> posts = new List<Post>();
 
             var distinctTags = tags.Distinct(StringComparer.CurrentCultureIgnoreCase); // IEnumerable

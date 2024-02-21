@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ZumRailsPosts.Common.Entities
 {
+    /// <summary>
+    /// Represents a post entity. Implements IEquatable for comparison between two objects. The Id property is unique, primarily used for removing duplicates.
+    /// </summary>
     public class Post : IEquatable<Post>
     {
         public string Author { get; set; }

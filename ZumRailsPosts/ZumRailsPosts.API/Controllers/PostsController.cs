@@ -20,9 +20,14 @@ namespace ZumRailsPosts.API.Controllers
             _logger = logger;
             _logic = logic;
         }
-        
-        //https://localhost:7047/api/Posts?tags=aa%2Caa&sortBy=id&direction=desc
 
+        /// <summary>
+        /// Retrieves posts based on specified tags, with optional sorting and direction.
+        /// </summary>
+        /// <param name="tags">Tags to filter posts by. Multiple tags should be comma-separated.</param>
+        /// <param name="sortBy">Field to sort the posts by (default is 'id').</param>
+        /// <param name="direction">Sorting direction, either 'asc' (default) or 'desc'.</param>
+        /// <returns>Returns a collection of posts based on the specified criteria.</returns>
         [HttpGet]
         [ProducesResponseType(typeof(PostsResponseResults), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -46,7 +51,8 @@ namespace ZumRailsPosts.API.Controllers
                 return NotFound(new ApiResponse(StatusCodes.Status404NotFound, "No posts were found matching your criteria."));
             }
 
-            var returnObject = new PostsResponseResults() { Posts = posts };
+            var returnObject = new PostsResponseResults(posts);
+
             return Ok(returnObject);
         }
     }

@@ -12,6 +12,9 @@ using ZumRailsPosts.Core.Infrastructure.Models;
 
 namespace ZumRailsPosts.Core.Infrastructure
 {
+    /// <summary>
+    /// Repository for interacting with posts data.
+    /// </summary>
     public class PostsRepository : IPostsRepository
     {
         private readonly HttpClient _httpClient;
@@ -24,7 +27,12 @@ namespace ZumRailsPosts.Core.Infrastructure
             _apiBaseUrl = apiBaseUrl ?? "https://api.hatchways.io";
             _cache = cache ?? throw new ArgumentNullException(nameof(cache));
         }
-        
+
+        /// <summary>
+        /// Retrieves all posts associated with the specified tag.
+        /// </summary>
+        /// <param name="tag">The tag to filter posts by.</param>
+        /// <returns>A list of posts associated with the specified tag.</returns>
         public async Task<List<Post>> GetAllPostsAsync(string tag)
         {
             var cacheKey = $"posts#{tag}";

@@ -1,6 +1,9 @@
 ﻿
 namespace ZumRailsPosts.API.Errors
 {
+    /// <summary>
+    /// Represents a uniform API response with a status code and an optional message.
+    /// </summary>
     public class ApiResponse
     {
         public ApiResponse(int statusCode, string message = null)

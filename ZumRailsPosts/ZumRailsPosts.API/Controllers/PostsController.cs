@@ -24,7 +24,10 @@ namespace ZumRailsPosts.API.Controllers
         //https://localhost:7047/api/Posts?tags=aa%2Caa&sortBy=id&direction=desc
 
         [HttpGet]
-        [ProducesResponseType(typeof(PostsResponseResults), StatusCodes.Status200OK)] 
+        [ProducesResponseType(typeof(PostsResponseResults), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<PostsResponseResults>> GetPosts(
                     [Required(ErrorMessage = "The 'tags' parameter is required.")]

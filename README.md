@@ -18,9 +18,12 @@ Additionally, it implements:
 - Cross-Origin Resource Sharing (CORS) enabled for all.
 - Integration with Swagger for API documentation.
 - Middleware for handling exceptions.
+- *Automapper* to map Core.Post to APIs' Post DTO object
 
 #### ZumRailsPosts.Common
 Common layer (\Helpers) for common utils and models such as MemoryCache helper and Post models
+
+Note - decided to remove Post model from Common, add one under Api Dto, other under Core.
 
 
 #### ZumRailsPosts.Core
@@ -52,7 +55,7 @@ Few Notes:
 Exceute commands : 
 - npm install
 - ng serve
-Default URL : http://localhost:4200/
+- Default URL : http://localhost:4200/
 
 #### Client
 

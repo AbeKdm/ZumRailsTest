@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using ZumRailsPosts.API.Errors;
+using ZumRailsPosts.API.Mappings;
 using ZumRailsPosts.API.Middleware;
 using ZumRailsPosts.Common;
 using ZumRailsPosts.Core.Infrastructure;
@@ -68,6 +69,8 @@ namespace ZumRailsPosts.API
                     return new BadRequestObjectResult(errorResponse);
                 };
             });
+
+            builder.Services.AddAutoMapper(typeof(AutomapperProfiles));
 
             var app = builder.Build();
 

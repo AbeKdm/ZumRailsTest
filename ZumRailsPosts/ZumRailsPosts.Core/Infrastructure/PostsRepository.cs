@@ -7,7 +7,6 @@ using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 using ZumRailsPosts.Common;
-using ZumRailsPosts.Common.Entities;
 using ZumRailsPosts.Core.Infrastructure.Models;
 
 namespace ZumRailsPosts.Core.Infrastructure

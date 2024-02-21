@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Hosting;
-using ZumRailsPosts.Common.Entities;
 
 namespace ZumRailsPosts.API.Models.DTO
 {

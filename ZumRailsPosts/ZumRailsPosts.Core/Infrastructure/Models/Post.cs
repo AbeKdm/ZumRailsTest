@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZumRailsPosts.Common.Entities
+namespace ZumRailsPosts.Core.Infrastructure.Models
 {
     /// <summary>
     /// Represents a post entity. Implements IEquatable for comparison between two objects. The Id property is unique, primarily used for removing duplicates.

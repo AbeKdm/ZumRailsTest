@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using ZumRailsPosts.API.Attributes.Validations;
@@ -14,11 +15,15 @@ namespace ZumRailsPosts.API.Controllers
     {
         private readonly ILogger<PostsController> _logger;
         private readonly IPostsLogic _logic;
+        private readonly IMapper _mapper;
 
-        public PostsController(ILogger<PostsController> logger, IPostsLogic logic)
+        public PostsController(ILogger<PostsController> logger,
+                                IPostsLogic logic,
+                                IMapper mapper)
         {
             _logger = logger;
             _logic = logic;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -51,7 +56,9 @@ namespace ZumRailsPosts.API.Controllers
                 return NotFound(new ApiResponse(StatusCodes.Status404NotFound, "No posts were found matching your criteria."));
             }
 
-            var returnObject = new PostsResponseResults(posts);
+            var postsDto = _mapper.Map<List<Post>>(posts);
+
+            var returnObject = new PostsResponseResults() { Posts = postsDto };
 
             return Ok(returnObject);
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using ZumRailsPosts.Common.Models;
+using ZumRailsPosts.Common.Entities;
 using ZumRailsPosts.Core.Infrastructure;
 
 namespace ZumRailsPosts.Core.Logic

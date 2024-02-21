@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZumRailsPosts.Common.Models
+namespace ZumRailsPosts.Common.Entities
 {
     public class Post : IEquatable<Post>
     {

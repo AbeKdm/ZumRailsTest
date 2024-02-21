@@ -1,4 +1,4 @@
-﻿using ZumRailsPosts.Common.Models;
+﻿using ZumRailsPosts.Common.Entities;
 
 namespace ZumRailsPosts.API.Models.DTO
 {

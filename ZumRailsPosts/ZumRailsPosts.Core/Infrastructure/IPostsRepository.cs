@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZumRailsPosts.Common.Models;
+using ZumRailsPosts.Common.Entities;
 
 namespace ZumRailsPosts.Core.Infrastructure
 {

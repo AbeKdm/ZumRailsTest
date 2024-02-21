@@ -14,7 +14,7 @@ An API layer utilizing business logic (BL) to fetch posts as per requirements
 Additionally, it implements:
 
 - Uniform API response for errors.
-- Validation - Use of Model validation custom attributes  (could've implemented in many ways, starting from plain code validation in the API to validation packages etc.)
+- Validation - Use of Model validation custom attributes  (could've implemented in many ways, starting from plain code validation in the API to validation packages etc., I chose an implementation in between)
 - Cross-Origin Resource Sharing (CORS) enabled for all.
 - Integration with Swagger for API documentation.
 - Middleware for handling exceptions.
@@ -42,6 +42,9 @@ It has also a cache layer, just in front of the invoking the URL
 Few Notes: 
 - the cache is simple, not sophisticated, it's also a singleton 
 - I'm using httpClient, again, simple usages, no retries, not sophisticated error handling etc.
+
+#### Out of scope
+- Tests (Unit, Functional, etc.)
 
 ### Installation Instructions 
 

@@ -1,9 +1,9 @@
 
 # ZumRailsPosts Interview Test - Avi Kedem
 
-A brief description of what this project does and who it's for
+## A brief description of the project's functionality and the structure of the solution
 
-## I've structured the solution into four layers:
+The solution is structured into four layers:
 
 #### Client
 A basic Angular client interacting with the API.

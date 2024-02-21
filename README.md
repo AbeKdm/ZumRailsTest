@@ -23,7 +23,7 @@ Additionally, it implements:
 #### ZumRailsPosts.Common
 Common layer (\Helpers) for common utils and models such as MemoryCache helper and Post models
 
-Note - decided to remove Post model from Common, add one under Api Dto, other under Core.
+Note - decided to remove Post model from Common, add one under ZumRailsPosts.API as a DTO and one under ZumRailsPosts.Core as the Model
 
 
 #### ZumRailsPosts.Core

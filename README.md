@@ -1,10 +1,9 @@
 
-# ZumRailsPosts Interview Test
+# ZumRailsPosts Interview Test - Avi Kedem
 
 A brief description of what this project does and who it's for
 
-
-### I've structured the solution into four layers:
+## I've structured the solution into four layers:
 
 #### Client
 A basic Angular client interacting with the API.
@@ -44,6 +43,19 @@ Few Notes:
 - the cache is simple, not sophisticated, it's also a singleton 
 - I'm using httpClient, again, simple usages, no retries, not sophisticated error handling etc.
 
+### Installation Instructions 
+
+#### Client
+Exceute commands : 
+- npm install
+- ng serve
+Default URL : http://localhost:4200/
+
+#### Client
+
+- Default URL : http://localhost:5292/
+- Example
+    - GET Post with tags [tech,health] sorted by id in asc order : http://localhost:5292/api/Posts?tags=tech%2Chealth&sortBy=id&direction=asc 
 
 ## Authors
 

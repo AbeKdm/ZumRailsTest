@@ -1,0 +1,65 @@
+<h1 id="tableLabel">Posts</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!posts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+
+<div>
+  <label for="tags">Tags:</label>
+  <input type="text" id="tags" name="tags" [(ngModel)]="tags" required>
+  <div *ngIf="!tags" style="color: red;">Tags field is mandatory</div>
+</div>
+
+<div>
+  <label for="sortBy">Sort By:</label>
+  <select id="sortBy" name="sortBy" [(ngModel)]="sortBy">
+    <option value="id">ID</option>
+    <option value="reads">Reads</option>
+    <option value="likes">Likes</option>
+    <option value="popularity">Popularity</option>
+  </select>
+</div>
+
+<div>
+  <label for="direction">Direction:</label>
+  <select id="direction" name="direction" [(ngModel)]="direction">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+</div>
+
+<button (click)="getPosts()">Fetch Posts</button>
+<button (click)="clearPosts()">Clear List</button>
+
+<p *ngIf="posts?.length">Total Posts: {{ posts.length }}</p>
+
+<p *ngIf="error" style="color: red;">Error: {{ error }}</p>
+
+<table *ngIf="posts">
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Author ID</th>
+      <th>ID</th>
+      <th>Likes</th>
+      <th>Popularity</th>
+      <th>Reads</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <td>{{ post.author }}</td>
+      <td>{{ post.authorId }}</td>
+      <td>{{ post.id }}</td>
+      <td>{{ post.likes }}</td>
+      <td>{{ post.popularity }}</td>
+      <td>{{ post.reads }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let tag of post.tags">{{ tag }}</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
